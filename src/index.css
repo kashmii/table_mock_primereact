@@ -1,13 +1,41 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.p-multiselect-panel .p-checkbox-icon {
+  background: orange;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.p-checkbox .p-checkbox-box.p-highlight {
+  /* border: solid 0.5px; */
+  border-color: #ff8c00;
+  background: #ff8d02;
+}
+.p-checkbox .p-checkbox-box.p-highlight:hover {
+  /* border: solid 0.5px; */
+  border-color: #ff8c00 !important;
+  background: #ff8d02 !important;
+}
+
+.p-multiselect-panel .p-multiselect-items .p-multiselect-item.p-highlight {
+  color: #000000 !important;
+  background: #ffffff00 !important;
+}
+
+.p-multiselect-panel
+  .p-multiselect-items
+  .p-multiselect-item.p-highlight:hover {
+  /* color: #ff090975 !important; */
+  background: #b4b4b400 !important;
+}
+
+.p-reorderable-column {
+  border: none !important;
+}
+
+.fixed {
+  position: absolute;
+  top: 208px;
+  right: 30px;
+  z-index: 100;
+}
+
+.p-multiselect {
+  transition: none;
 }
