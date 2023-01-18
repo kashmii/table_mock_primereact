@@ -63,12 +63,14 @@ const DataTableReorderDemo = () => {
     );
   };
 
+  const usedColumns = (columnsFromLocalStorage[0] ||= selectedColumns);
+  console.log('selectedColumns:', columnsFromLocalStorage[0]);
   // =====
   // 以下2つのconst...のうち、片方のみ使用する（もう片方はコメントアウトする）
   // （場合分けのコードを書くのを端折っているため）
   // =====
   // 初回時や列の表示非表示を操作していないときはこちら
-  const dynamicColumns = selectedColumns.map((col) => {
+  const dynamicColumns = usedColumns.map((col) => {
     // LocalStorageに保存している列を使うときはこちら
     // const dynamicColumns = columnsFromLocalStorage[0].map((col) => {
     if (col.field == '企業名') {
@@ -106,7 +108,7 @@ const DataTableReorderDemo = () => {
       <div className="card">
         <div class="fixed">
           <MultiSelect
-            value={columnsFromLocalStorage[0]}
+            value={usedColumns}
             options={columns}
             optionLabel="field"
             onChange={onColumnToggle}
@@ -119,11 +121,10 @@ const DataTableReorderDemo = () => {
           reorderableColumns
           // 以下2行 rowGroupMode, groupRowsBy がセル結合に関するprops
           // デモ https://www.primefaces.org/primereact/datatable/rowgroup/
-          // rowGroupMode="rowspan"
-          // groupRowsBy={['企業名', '役員', '決算月', '評価']}
-
+          rowGroupMode="rowspan"
+          groupRowsBy={['企業名', '役員', '決算月', '評価']}
           // 上2行と下のscrollableは現状共存できない
-          scrollable
+          // scrollable
           scrollHeight="500px"
           scrollDirection="both"
           //
@@ -136,9 +137,9 @@ const DataTableReorderDemo = () => {
         </DataTable>
       </div>
       <p>///</p>
-      <p>未実装の要件</p>
-      <p>・ページネーション</p>
-      <p>・列でソート</p>
+      <p>///</p>
+      <p>///</p>
+      <p>///</p>
       <p>///</p>
       <p>///</p>
       <p>///</p>
